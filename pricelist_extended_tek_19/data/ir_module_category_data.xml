@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Privilege -->
+        <record id="res_groups_privilege_pricelist" model="res.groups.privilege">
+            <field name="name">Pricelist</field>
+            <field name="sequence">50</field>
+            <field name="category_id" ref="base.module_category_productivity"/>
+            <field name="description">Pricelist Access Groups</field>
+        </record>
+
+        <!-- Admin Group (no default implied, stays blank) -->
+        <record id="group_admin_pricelist_user" model="res.groups">
+            <field name="name">Admin</field>
+            <field name="sequence">20</field>
+            <field name="privilege_id" ref="res_groups_privilege_pricelist"/>
+            <field name="implied_ids" eval="[]"/>
+        </record>
+
+    </data>
+</odoo>
+
